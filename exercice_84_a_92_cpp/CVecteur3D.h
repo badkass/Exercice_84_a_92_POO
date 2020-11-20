@@ -1,30 +1,24 @@
 #pragma once
+#include <iostream>
+using namespace std;
+
+const int SIZE = 3;
+
 class CVecteur3D
 {
 private:
-	float m_fltX;
-	float m_fltY;
-	float m_fltZ;
+	float v[SIZE];
+
 public:
-	CVecteur3D(float fltX = 0, float fltY = 0, float fltZ = 0);
-
-	// Surcharges opérateurs ==
-	bool operator==(const CVecteur3D&); //fonction membre
-	friend bool operator==(const CVecteur3D&, const CVecteur3D&); //fonction amie
-
-	//Surcharges opérateurs !=
-	bool operator!=(const CVecteur3D&); //fonction membre
-	friend bool operator!=(const CVecteur3D&, const CVecteur3D&); //fonction amie
-
-
-	friend CVecteur3D operator+(const CVecteur3D&, const CVecteur3D&);
-	friend float operator*(const CVecteur3D&, const CVecteur3D&);
-
-	//Assesseurs
-	float getX();
-	float getY();
-	float getZ();
-
+	
+	CVecteur3D(float c1 = 0.0, float c2 = 0.0, float c3 = 0.0) {
+		v[0] = c1; v[1] = c2; v[2] = c3;
+	}
+		float& operator[] (int);
 };
 
+float& CVecteur3D::operator [] (int i) {
+	if ((i < 0) || (i > 2)) i = 0;     
 
+	return v[i];
+}
