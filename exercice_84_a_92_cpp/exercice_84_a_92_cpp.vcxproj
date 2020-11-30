@@ -141,11 +141,13 @@
   <ItemGroup>
     <ClCompile Include="CVecteur3D.cpp" />
     <ClCompile Include="Ex89.cpp" />
+    <ClCompile Include="Ex90.cpp" />
     <ClCompile Include="main.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="CVecteur3D.h" />
     <ClInclude Include="Ex89.h" />
+    <ClInclude Include="Ex90.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
