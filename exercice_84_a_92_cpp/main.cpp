@@ -1,22 +1,31 @@
 #include <iostream>
 #include "CVecteur3D.h"
-
+#include "Ex89.h"
 
 using namespace std;
 
 int main() {
 
-	CVecteur3D v1(1, 2, 3);
-	CVecteur3D v2(4, 5, 6);
-
-	v1[0] = 5;
-
-	v2[0] = v1[2];
-
-	cout << "Valeur 0 du vecteur 1 : " << v1[0] << endl;
-	cout << "Valeur 0 du vecteur 2 : " << v2[0] << endl;
+    vecteur_3d_4 v1_4(5, 7, 3);
+    const vecteur_3d_4 v2_4(5, 3, 1);
+    cout << "v1_4: ";
+    for (int i = 0; i < 3; i++) {
+        cout << v1_4[i] << " ";
+    }
+    cout << endl;
+    cout << "v2_4: ";
+    for (int i = 0; i < 3; i++) {
+        cout << v2_4[i] << " ";
+    }
+    for (int i = 0; i < 3; i++) {
+        v1_4[i] = i;
+    }
+    cout << endl;
+    cout << "v1_4: ";
+    for (int i = 0; i < 3; i++) {
+        cout << v1_4[i] << "";
+    }
 
 	return 0;
 }
 
-/*update*/
