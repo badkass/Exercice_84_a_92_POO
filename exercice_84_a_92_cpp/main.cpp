@@ -1,25 +1,22 @@
 #include <iostream>
-#include "Ex91.h"
+#include "Ex92.h"
 
 using namespace std;
 
 int main() {
 
    
-    int2d tab1(4, 8);
-    for (int i = 0; i < 4; i++) {
-        for (int j = 0; j < 8; i++) {
-            tab1(i, j) = i + j;
-        }
+    const int n_tranche = 4;
+    histo h(0.0, 5.0, n_tranche);
+    h << 1.5 << 2.4 << 3.8 << 3.0 << 2.0 << 3.5 << 2.8 << 4.6;
+    h << 12.0 << -3.5;
+    for (int i = 0; i < 10; i++) {
+        h << i / 2.0;
     }
-    for (int i = 0; i < 4; i++) {
-        for (int j = 0; j < 8; i++) {
-            cout << tab1(i, j) << " ";
-        }
-        cout << endl;
+    cout << "valeurs des tranches" << endl;
+    for (int i = 1; i <= n_tranche; i++) {
+        cout << "numéro " << i << " : " << h[i] << endl;
     }
-
-    cout << endl << endl;
 
         return 0;
 }
